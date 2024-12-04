@@ -17,7 +17,20 @@ Console.WriteLine(Distance());
 Console.WriteLine(Score());
 return;
 
-// First part
+//First part
+int Distance()
+{
+    var sum = 0;
+
+    for (var i = 0; i < lines.Length; i++)
+    {
+        sum += Math.Abs(firstColumn[i] - secondColumn[i]);
+    }
+
+    return sum;
+}
+
+// Second part
 int Score()
 {
     var score = 0;
@@ -33,17 +46,4 @@ int Score()
 int Count(int num)
 {
     return secondColumn.Count(o => o == num);
-}
-
-//Second part
-int Distance()
-{
-    var sum = 0;
-
-    for (var i = 0; i < lines.Length; i++)
-    {
-        sum += Math.Abs(firstColumn[i] - secondColumn[i]);
-    }
-
-    return sum;
 }
